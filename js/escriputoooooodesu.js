@@ -19,9 +19,9 @@ function checo(val){
        document.getElementById("SC2").innerHTML=r
     }
     else if (Pscore == 'Papel' && Ascore == 'Tijeras'){
-        r = parseInt(document.getElementById("SC1").innerHTML);
+        r = parseInt(document.getElementById("SC2").innerHTML);
         r = r +  1
-        document.getElementById("SC1").innerHTML=r
+        document.getElementById("SC2").innerHTML=r
     }
 
 
