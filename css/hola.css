@@ -27,6 +27,25 @@
   .center {
     margin: auto;
     width: 50%;
-    border: 3px solid green;
+    border: 5px solid green;
     padding: 10px;
   }
+.invert{
+  transform: scaleX(-1);
+}
+.fondodekakasho{
+  background-image: url("../img/fondo.gif");
+  background-color: white;
+}
+.kakashodance{
+  background-image: url("../img/Kakashedansu.gif");
+  background-color: white;
+  color: whitesmoke !important; 
+}
+
+.caadotekushitu{
+  color: white;
+  font-weight: bold;
+  background-color: white;
+  background-blend-mode: difference;
+}

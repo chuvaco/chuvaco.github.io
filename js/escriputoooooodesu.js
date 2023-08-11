@@ -11,17 +11,19 @@ function checo(val){
     Ascore = Pao[random] 
 
     if (Pscore == 'Papel' && Ascore == 'Papel'){
-        myFunction()
+        myFunction("Tie")
     }
     else if (Pscore == 'Papel' && Ascore == 'Piedra'){
-       r = parseInt(document.getElementById("SC2").innerHTML);
+       r = parseInt(document.getElementById("SC1").innerHTML);
        r = r +  1
-       document.getElementById("SC2").innerHTML=r
+       document.getElementById("SC1").innerHTML=r
+       myFunction("W")
     }
     else if (Pscore == 'Papel' && Ascore == 'Tijeras'){
         r = parseInt(document.getElementById("SC2").innerHTML);
         r = r +  1
         document.getElementById("SC2").innerHTML=r
+        myFunction("L")
     }
 
 
@@ -29,14 +31,16 @@ function checo(val){
         r = parseInt(document.getElementById("SC2").innerHTML);
         r = r +  1
         document.getElementById("SC2").innerHTML=r
+        myFunction("L")
     }
     else if (Pscore == 'Piedra' && Ascore == 'Piedra'){
-        myFunction()
+        myFunction("Tie")
     }
     else if (Pscore == 'Piedra' && Ascore == 'Tijeras'){
         r = parseInt(document.getElementById("SC1").innerHTML);
         r = r +  1
         document.getElementById("SC1").innerHTML=r
+        myFunction("W")
     }
 
 
@@ -44,22 +48,40 @@ function checo(val){
         r = parseInt(document.getElementById("SC1").innerHTML);
         r = r +  1
         document.getElementById("SC1").innerHTML=r
+        myFunction("W")
     }
     else if (Pscore == 'Tijeras' && Ascore == 'Piedra'){
         r = parseInt(document.getElementById("SC2").innerHTML);
         r = r +  1
         document.getElementById("SC2").innerHTML=r
+        myFunction("L")
     }
     else if (Pscore == 'Tijeras' && Ascore == 'Tijeras'){
-        setTimeout(myFunction(),2000);
+        myFunction("Tie")
     }
 }
 
-function myFunction() {
-    var myWindow = window.open("r", "MsgWindow", "width=400, height=800");
-    myWindow.document.write("<img src='img/Corbata.png'>");
-    setTimeout(() => {
-        myWindow.close()
-    }, 600)
-    // setTimeout( , "60000") 
+function myFunction(Result) {
+    if (Result == 'Tie'){
+        var myWindow = window.open("r", "MsgWindow", "width=400, height=800");
+        myWindow.document.write("<img src='img/Corbata.png'>");
+        setTimeout(() => {
+            myWindow.close()
+        }, 2000)
+    }
+    else if (Result == 'W'){
+        var myWindow = window.open("r", "MsgWindow", "width=400, height=200");
+        myWindow.document.write("<img src='img/Win.gif'>");
+        setTimeout(() => {
+            myWindow.close()
+        }, 3000)
+    }
+    else if (Result == 'L'){
+        var myWindow = window.open("r", "MsgWindow", "width=450, height=250");
+        myWindow.document.write("<img src='img/Derrota.gif'>");
+        setTimeout(() => {
+            myWindow.close()
+        }, 2000)
+    }
 }
+
